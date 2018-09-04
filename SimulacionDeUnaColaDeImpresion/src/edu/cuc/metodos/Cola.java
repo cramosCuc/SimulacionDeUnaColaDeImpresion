@@ -5,6 +5,8 @@
  */
 package edu.cuc.metodos;
 
+import java.util.Iterator;
+
 /**
  *
  * @author CARLOS
@@ -55,6 +57,29 @@ public class Cola <E>{
     
     public Nodo<E> getEnd(){
        return this.end;
+    }
+    
+    public Iterator recorrido() {
+        Iterator<E> recorrido = new Iterator() {
+            Nodo<E> primerNodo = top;
+
+            @Override
+            public boolean hasNext() {
+                return primerNodo != null;
+            }
+
+            @Override
+            public E next() {
+                if (hasNext()) {
+                    E variable = primerNodo.getValor();
+                    primerNodo = primerNodo.getLink();
+                    return variable;
+                } else {
+                    throw new NullPointerException("No hay un siguiente nodo");
+                }
+            }
+        };
+        return recorrido;
     }
     
      public void display(){

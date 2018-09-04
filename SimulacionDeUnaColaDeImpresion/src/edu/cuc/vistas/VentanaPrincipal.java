@@ -21,6 +21,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
     Cola<String> imprimir;
 
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -36,6 +37,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         btnInicarSimulacion = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblSpoolTxt = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -78,6 +81,23 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/printer.png"))); // NOI18N
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 70, 130, 140));
 
+        tblSpoolTxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        tblSpoolTxt.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        tblSpoolTxt.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        tblSpoolTxt.setAutoscrolls(false);
+        tblSpoolTxt.getTableHeader().setResizingAllowed(false);
+        tblSpoolTxt.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(tblSpoolTxt);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 260, 90));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 710, 380));
 
         pack();
@@ -87,6 +107,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void btnCargarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarDatosActionPerformed
         // TODO add your handling code here:
         imprimir = edu.cuc.metodos.Metodos.cargarDatos("spool.txt");
+        edu.cuc.metodos.Metodos.tableTail(imprimir, tblSpoolTxt);
+        
         
     }//GEN-LAST:event_btnCargarDatosActionPerformed
 
@@ -140,5 +162,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tblSpoolTxt;
     // End of variables declaration//GEN-END:variables
 }
