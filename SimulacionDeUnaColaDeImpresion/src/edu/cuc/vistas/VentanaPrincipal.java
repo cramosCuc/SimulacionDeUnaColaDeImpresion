@@ -5,6 +5,8 @@
  */
 package edu.cuc.vistas;
 
+import edu.cuc.metodos.Cola;
+
 /**
  *
  * @author CARLOS
@@ -17,6 +19,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public VentanaPrincipal() {
         initComponents();
     }
+    Cola<String> imprimir;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -83,6 +86,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnCargarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarDatosActionPerformed
         // TODO add your handling code here:
+        imprimir = edu.cuc.metodos.Metodos.cargarDatos("spool.txt");
+        
     }//GEN-LAST:event_btnCargarDatosActionPerformed
 
     private void btnInicarSimulacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicarSimulacionActionPerformed
