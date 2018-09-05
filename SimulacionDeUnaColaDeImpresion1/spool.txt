@@ -1,4 +1,0 @@
-Presupuesto.xlsx,10
-CartaRegistraduria.docx,8
-CartaPromigas.docx,9
-ReciboMensual.xlsx,12
