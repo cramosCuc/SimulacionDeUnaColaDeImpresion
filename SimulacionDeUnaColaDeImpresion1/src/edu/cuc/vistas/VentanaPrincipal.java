@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author CARLOS y DIEGO
+ * @author CARLOS
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
 
